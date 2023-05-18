@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+// import {NavLink} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+
 import Navbar from 'react-bootstrap/Navbar';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Homepage = () => {
     const [storedData, setStoredData] = useState(localStorage.getItem('contactData'))
     const [data, setData] = useState({});
@@ -37,11 +40,11 @@ const Homepage = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Navbar.Brand href="/" className='ms-4'>Homepage</Navbar.Brand>
-                            <Nav.Link href="/contact" className='ms-4'>Contact Page</Nav.Link>
-                            <Nav.Link href="/task" className='ms-4' disabled={taskenable}
+                            <Navbar.Brand  href ="/"className='ms-4 text-white fs-5 text-decoration-none '>Homepage</Navbar.Brand >
+                            <NavLink to="/contact" className='ms-4 text-light fs-7 text-decoration-none'>Contact Page</NavLink>
+                            <NavLink to="/task" className='ms-4 text-light fs-7 text-decoration-none' disabled={taskenable}
 
-                            >Task Page</Nav.Link>
+                            >Task Page</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

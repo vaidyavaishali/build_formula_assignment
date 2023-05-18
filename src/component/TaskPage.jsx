@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 const TaskPage = () => {
     const [task, setTask] = useState([])
     const [addNew, setAddnew] = useState("")
@@ -34,8 +35,8 @@ const TaskPage = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/" className='ms-4'>Homepage</Nav.Link>
-                            <Nav.Link href="/contact" className='ms-4'>Contact Page</Nav.Link>
+                            <NavLink to="/" className='ms-4 text-light fs-7 text-decoration-none'>Homepage</NavLink>
+                            <NavLink to="/contact" className='ms-4 text-light fs-7 text-decoration-none'>Contact Page</NavLink>
                             <Navbar.Brand href="/task" className='ms-4'>Task Page</Navbar.Brand>
                         </Nav>
                     </Navbar.Collapse>

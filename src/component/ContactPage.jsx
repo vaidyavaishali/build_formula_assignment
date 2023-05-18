@@ -5,7 +5,8 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import { useNavigate, NavLink} from 'react-router-dom';
 const ContactPage = () => {
     const [taskenable, setTaskenable] = useState(true)
     const [contactData, setcontactData] = useState({
@@ -36,9 +37,9 @@ const ContactPage = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="/" className='ms-4'>Homepage</Nav.Link>
+                            <NavLink to="/" className='ms-4 text-light fs-7 text-decoration-none' >Homepage</NavLink>
                             <Navbar.Brand href="/contact" className='ms-4'>Contact Page</Navbar.Brand>
-                            <Nav.Link href="/task" className='ms-4' disabled={taskenable}>Task Page</Nav.Link>
+                            <NavLink to="/task" className='ms-4 text-light fs-7 text-decoration-none' disabled={taskenable}>Task Page</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
