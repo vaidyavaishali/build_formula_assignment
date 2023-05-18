@@ -7,23 +7,19 @@ import { NavLink } from 'react-router-dom';
 const TaskPage = () => {
     const [task, setTask] = useState([])
     const [addNew, setAddnew] = useState("")
-
     const AddNewTask = () => {
         if (addNew.trim() !== "") {
             setTask((prev) => [...prev, addNew])
             setAddnew("")
         }
     }
-
     const DeleteTask = (index) => {
         setTask((items) => items.filter((_, i) => i !== index));
     }
-
     const updateTask = (id, updatedTask) => {
         setTask((prev) => (
             prev.map((task, i) => (i === id ? updatedTask : task))))
     }
-
     return (
         <div id='taskPage'>
             <header style={{ width: "100vw", height: "15vh" }} className='text-center pt-4 bg-light-subtle' bg="secondary">
@@ -31,7 +27,6 @@ const TaskPage = () => {
             </header>
             <Navbar collapseOnSelect expand="lg" bg="secondary" variant="dark" className='p-3' text="black">
                 <Container>
-                    {/* <Navbar.link href="/" >Homepage</Navbar.link> */}
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -56,8 +51,8 @@ const TaskPage = () => {
                                     {items}
                                 </li>
                                 <span>
-                                    <button onClick={() => DeleteTask(i)} className='me-2' style={{border:"none", color:"red"}} ><i class="fa fa-trash" aria-hidden="true" ></i></button>
-                                    <button onClick={() => updateTask(i, prompt('Enter updated task:', task))} className='ms-2 ' style={{border:"none", color:"blue"}}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                    <button onClick={() => DeleteTask(i)} className='me-2' style={{ border: "none", color: "red" }} ><i class="fa fa-trash" aria-hidden="true" ></i></button>
+                                    <button onClick={() => updateTask(i, prompt('Enter updated task:', task))} className='ms-2 ' style={{ border: "none", color: "blue" }}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                                 </span>
 
                             </div>
@@ -65,7 +60,7 @@ const TaskPage = () => {
                     })}
                 </div>
             </div>
-            
+
 
         </div>
     )

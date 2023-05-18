@@ -11,7 +11,6 @@ const Homepage = () => {
     const [storedData, setStoredData] = useState(localStorage.getItem('contactData'))
     const [data, setData] = useState({});
     const [taskenable, setTaskenable] = useState(true)
-    const navigate = useNavigate()
     
     useEffect(() => {
         if (storedData) {
@@ -42,9 +41,7 @@ const Homepage = () => {
                         <Nav className="me-auto">
                             <Navbar.Brand  href ="/"className='ms-4 text-white fs-5 text-decoration-none '>Homepage</Navbar.Brand >
                             <NavLink to="/contact" className='ms-4 text-light fs-7 text-decoration-none'>Contact Page</NavLink>
-                            <NavLink to="/task" className='ms-4 text-light fs-7 text-decoration-none' disabled={taskenable}
-
-                            >Task Page</NavLink>
+                            <NavLink to="/task" className='ms-4 text-light fs-7 text-decoration-none' disabled={taskenable}>Task Page</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -54,7 +51,6 @@ const Homepage = () => {
 
                 {Object.keys(data).length > 0 && (
                     <div>
-                        {/* <h2>Stored Data:</h2> */}
                         <p> <b style={{ float: "left" }}> First Name: </b>{data.firstName}</p>
                         <p> <b style={{ float: "left" }}> Last Name: </b>{data.lastName}</p>
                     </div>
