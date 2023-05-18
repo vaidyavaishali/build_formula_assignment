@@ -60,12 +60,13 @@ li{
 }
 #task-list{
   width: 90%;
-  height: 6vh;
+  height: auto;
   margin:4% auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 3%;
+  text-align: center;
   /* background-color: aquamarine; */
   box-shadow: 2px 2px 2px 2px #ccc;
 }
